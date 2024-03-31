@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = ({ handleToggleDarkMode }) => { //darkmode toggle
     return (
-        <div className="header">
+        <div className="header"> 
             <h1>NoteFlow</h1>
             <button
              onClick={() => handleToggleDarkMode(
@@ -15,5 +15,5 @@ const Header = ({ handleToggleDarkMode }) => { //darkmode toggle
         </div>
     );
 };
-
+// test
 export default Header;

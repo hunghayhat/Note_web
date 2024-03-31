@@ -18,6 +18,7 @@ const AddNote = ({ handleAddNote}) => {
         }
     }
     return(
+        //test
         <div className="note new">
             <textarea
             rows={8}

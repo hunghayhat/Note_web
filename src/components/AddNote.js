@@ -4,7 +4,7 @@ const AddNote = ({ handleAddNote}) => {
     //Đặt giá trị ban đầu cho noteText là ''
     //Cập nhật trạng thái mới cho noteText => gọi hàm setNoteText
     const[noteText, setNoteText] = useState('');
-    const characterLimit = 200;
+    const characterLimit = 200; //max kí tự là 200
 
     const handleChange = (event) => {
         if (characterLimit - event.target.value.length >=0){

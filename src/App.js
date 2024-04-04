@@ -10,16 +10,6 @@ const App = () => {
     text: "This is my first note!",
     Date: "14/08/2023",
   }
-  // {
-  //   id: nanoid(),
-  //   text: "This is my second note!",
-  //   Date: "15/08/2003",
-  // },
-  // {
-  //   id: nanoid(),
-  //   text: "This is my third note!",
-  //   Date: "16/08/2023",
-  // }
 ]);
 
 const [searchText, setSearchText] = useState('');

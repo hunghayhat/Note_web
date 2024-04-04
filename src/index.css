@@ -38,7 +38,7 @@ code {
 .notes-list{
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .note.new {
@@ -73,6 +73,9 @@ textarea:focus {
   min-height: 170px;
   display: flex;
   flex-direction: column;
+  /* 
+  justify-content: tạo có khoảng cách giữa 2 phần tử được hiển thị, 2 phần tử nằm ở 2 biên theo chiều được phân cách
+  */
   justify-content: space-between;
   white-space: pre-wrap;
 }

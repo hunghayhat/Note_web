@@ -78,6 +78,7 @@ textarea:focus {
   */
   justify-content: space-between;
   white-space: pre-wrap;
+  /* giữ nguyên bất kỳ khoảng cách nào đã được thêm vào văn bản */
 }
 
 .note-footer{

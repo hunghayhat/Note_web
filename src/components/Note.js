@@ -1,4 +1,4 @@
-import {MdDeleteForever} from 'react-icons/md';
+import {MdBuild, MdDeleteForever} from 'react-icons/md';
 const Note = ({id, text, date, handleDeleteNote}) => {
     return(
         <div className="note">
@@ -7,6 +7,9 @@ const Note = ({id, text, date, handleDeleteNote}) => {
                 <small>{date}</small>
                 <MdDeleteForever onClick = {() => handleDeleteNote(id)} 
                 className='delete-icon' size='1.3em' />
+                <MdBuild onClick = {() => handleUpdateNote(id)}
+                className ='build-icon' size = '1.3em'/>
+                
             </div>
         </div>
     );

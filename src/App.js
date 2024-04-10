@@ -16,7 +16,8 @@ const [searchText, setSearchText] = useState('');
 
 const [darkMode, setDarkMode] = useState(false);
 
-const [editNoteText, setEditNoteText] = useState('');
+const [updateNoteText, setUpdateNoteText] = useState('');
+const [updateNoteId, setUpdateNoteId] = useState();
 
 useEffect(() => {
   const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data')
@@ -51,7 +52,15 @@ const deleteNote = (id) => {
 };
 
 const updateNote = (id) => {
-  const updateNotes = notes.map()
+  const updateNotes = notes.map((note) => {
+    if (note.id === updateNoteId) {
+      return {...note, text: updateNoteText}
+    }
+    return note;
+  });
+  setNotes(updateNotes);
+  setUpdateNoteId(null);
+  setUpdateNoteText('');
 }
 
 
@@ -64,7 +73,16 @@ const updateNote = (id) => {
         notes={notes.filter((note) => note.text.toLowerCase().includes(searchText)
           )}
         handleAddNote={addNote} 
-        handleDeleteNote = {deleteNote}/>
+        handleDeleteNote = {deleteNote}
+        handleUpdateNote = {(id, text) => {
+          setUpdateNoteId(id)
+          setUpdateNoteText(text)
+        }}
+        updateNoteId = {updateNoteId}
+        updateNoteText = {updateNoteText}
+        // truyền hàm updateNote xuống component con
+        handleUpdate = {updateNote}
+        />
       </div>
     </div>
     

@@ -1,5 +1,5 @@
 import {MdBuild, MdDeleteForever} from 'react-icons/md';
-const Note = ({id, text, date, handleDeleteNote}) => {
+const Note = ({id, text, date, handleDeleteNote, handleUpdateNote}) => {
     return(
         <div className="note">
             <span>{text}</span>

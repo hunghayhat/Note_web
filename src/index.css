@@ -91,6 +91,13 @@ textarea:focus {
   cursor: pointer;
 }
 
+.build-icon {
+  cursor: pointer;
+}
+
+.text-area {
+  background-color: #fef68a;
+}
 .search {
   display: flex;
   align-items: center;

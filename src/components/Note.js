@@ -14,34 +14,35 @@ const Note = ({ id, text, date, handleDeleteNote, handleUpdateNote }) => {
     }
     return (
         <div
-        className="note"
-        id={id}
+            className="note"
+            id={id}
         >
-            <textarea
+            <textarea className='text-area'
                 onChange={(e) => {
                     console.log(e.target.value);
-                    setTText(e.target.value)}}
+                    setTText(e.target.value)
+                }}
                 // onFocus={isUpdating}
                 disabled={!isUpdating}
             >{tText}</textarea>
             <div className="note-footer">
                 <small>{date}</small>
+                <div>
+
                 <MdDeleteForever onClick={() => handleDeleteNote(id)}
                     className='delete-icon' size='1.3em' />
-                
-                
-                
                 {
-                    isUpdating == false ?
-
-                        <MdBuild
-                            onClick={() => handleClickUpdate()}
-                            className='build-icon'
-                            size='1.3em' />
-                        :
-                        <div onClick={() => onSave()}>Save</div>
+                    isUpdating === false ?
+                    
+                    <MdBuild
+                    onClick={() => handleClickUpdate()}
+                    className='build-icon'
+                    size='1.3em' />
+                    :
+                    <button className='save' onClick={() => onSave()}>Save</button>
                 }
 
+                </div>
             </div>
         </div>
     );

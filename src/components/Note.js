@@ -30,21 +30,21 @@ const Note = ({ id, text, date, handleDeleteNote, handleUpdateNote }) => {
                 <div>
 
 
-                <MdDeleteForever onClick={() => handleDeleteNote(id)}
-                    className='delete-icon' size='1.3em' />
-                {
-                    isUpdating === false ?
-                    
-                    <MdBuild
-                    onClick={() => handleClickUpdate()}
-                    className='build-icon'
-                    size='1.3em' />
-                    :
-                    <button className='save' onClick={() => onSave()}>Save</button>
-                }
+                    <MdDeleteForever onClick={() => handleDeleteNote(id)}
+                        className='delete-icon' size='1.3em' />
+                    {
+                        isUpdating === false ?
+
+                            <MdBuild
+                                onClick={() => handleClickUpdate()}
+                                className='build-icon'
+                                size='1.3em' />
+                            :
+                            <button className='save' onClick={() => onSave()}>Save</button>
+                    }
 
                 </div>
-               
+
             </div>
         </div>
     );

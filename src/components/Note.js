@@ -5,7 +5,6 @@ const Note = ({ id, text, date, handleDeleteNote, handleUpdateNote }) => {
     const [tText, setTText] = useState(text);
     const handleClickUpdate = () => {
         setIsUpdating(!isUpdating);
-        // document.getElementById(id).focus();
     }
 
     const onSave = () => {
@@ -22,7 +21,6 @@ const Note = ({ id, text, date, handleDeleteNote, handleUpdateNote }) => {
                     console.log(e.target.value);
                     setTText(e.target.value)
                 }}
-                // onFocus={isUpdating}
                 disabled={!isUpdating}
             >{tText}</textarea>
             <div className="note-footer">

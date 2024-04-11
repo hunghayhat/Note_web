@@ -5,12 +5,7 @@ import Search from "./components/Search";
 import Header from "./components/Header";
 
 const App = () => {
-  const[notes, setNotes] = useState([
-    // id: nanoid(),
-    // text: "This is my first note!",
-    // Date: "14/08/2023",
-  
-]);
+  const[notes, setNotes] = useState([]);
 
 const [searchText, setSearchText] = useState('');
 

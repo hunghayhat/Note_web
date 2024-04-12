@@ -21,8 +21,9 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
             id={id}
         >
             <textarea
-                column={3}
+                cols={10}
                 rows={8}
+                value={tmpText}
                 disabled={!isUpdating}
                 className='text-area'
                 onChange={(event)=> {

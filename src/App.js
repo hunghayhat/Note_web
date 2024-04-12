@@ -43,7 +43,18 @@ const deleteNote = (id) => {
   setNotes(newNotes);
 };
 
-
+const updateNote = (id, updatedText) => {
+  const updatedNote = notes.map((note) => {
+    if (note.id === id) 
+     return {
+      id: note.id,
+      text: updatedText,
+      date: note.date
+    }
+    else return note
+  })
+  setNotes(updatedNote)
+}
   return (
     <div className={`${darkMode ? "dark-mode" : ""}`}>
       <div className="container">
@@ -54,6 +65,7 @@ const deleteNote = (id) => {
           )}
         handleAddNote={addNote} 
         handleDeleteNote = {deleteNote}
+        updateNote = {updateNote}
         
         />
       </div>

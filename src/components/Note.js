@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MdBuild, MdDeleteForever } from 'react-icons/md';
-const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
+import { IoCopy } from "react-icons/io5";
+const Note = ({ id, text, date, handleDeleteNote, updateNote, cloneNote }) => {
 
     const [isUpdating, setIsUpdating] = useState(false)
 
@@ -14,6 +15,10 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
     const handleSaveClick = () => {
         updateNote(id, tmpText)
         setIsUpdating(!isUpdating)
+    }
+
+    const handleCloneClick = () => {
+        cloneNote(text)
     }
     return (
         <div
@@ -40,6 +45,8 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
                                 className='delete-icon' size='1.3em' />
                             <MdBuild onClick={() => handleUpdateClick()}
                                 className='update-icon' size='1.3em' />
+                                <IoCopy onClick={() => handleCloneClick(id)}
+                                className='clone-icon' size = '1.3em' />
                         </div>
                         :
                         <button onClick={() => handleSaveClick()} className='save'>Save</button>

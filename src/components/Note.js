@@ -6,7 +6,7 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote, cloneNote }) => {
     const [isUpdating, setIsUpdating] = useState(false)
 
     const [tmpText, setTmpText] = useState(text)
-  
+
     const handleUpdateClick = () => {
 
         setIsUpdating(!isUpdating)
@@ -31,7 +31,7 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote, cloneNote }) => {
                 value={tmpText}
                 disabled={!isUpdating}
                 className='text-area'
-                onChange={(event)=> {
+                onChange={(event) => {
                     setTmpText(event.target.value)
                 }}
             >{tmpText}
@@ -45,8 +45,8 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote, cloneNote }) => {
                                 className='delete-icon' size='1.3em' />
                             <MdBuild onClick={() => handleUpdateClick()}
                                 className='update-icon' size='1.3em' />
-                                <IoCopy onClick={() => handleCloneClick(id)}
-                                className='clone-icon' size = '1.3em' />
+                            <IoCopy onClick={() => handleCloneClick(id)}
+                                className='clone-icon' size='1.3em' />
                         </div>
                         :
                         <button onClick={() => handleSaveClick()} className='save'>Save</button>

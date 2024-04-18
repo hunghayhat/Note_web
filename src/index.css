@@ -95,6 +95,10 @@ textarea:focus {
   cursor: pointer;
 }
 
+.clone-icon {
+  cursor: pointer
+}
+
 .text-area {
   background-color: #fef68a;
 }

@@ -39,16 +39,16 @@ const addNote = (text) => {
   setNotes(newNotes);
 }
 
-const cloneNote = (text) => {
-  const date = new Date();
-  const newNote = {
-    id: nanoid(),
-    text: text,
-    date: date.toLocaleDateString()
-  }
-  const newNotes = [...notes, newNote];
-  setNotes(newNotes);
-}
+// const cloneNote = (text) => {
+//   const date = new Date();
+//   const newNote = {
+//     id: nanoid(),
+//     text: text,
+//     date: date.toLocaleDateString()
+//   }
+//   const newNotes = [...notes, newNote];
+//   setNotes(newNotes);
+// }
 const deleteNote = (id) => {
   const newNotes = notes.filter((note)=> note.id !== id);
   setNotes(newNotes);
@@ -77,7 +77,7 @@ const updateNote = (id, updatedText) => {
         handleAddNote={addNote} 
         handleDeleteNote = {deleteNote}
         updateNote = {updateNote}
-        cloneNote = {cloneNote}
+        // cloneNote = {cloneNote}
         
         />
       </div>

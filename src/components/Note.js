@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { MdBuild, MdDeleteForever } from 'react-icons/md';
 import { IoCopy } from "react-icons/io5";
-const Note = ({ id, text, date, handleDeleteNote, updateNote, cloneNote }) => {
+import { useDispatch } from 'react-redux';
+import { cloneNote } from '../redux/actions/actions';
+
+const Note = ({ id, text, date, handleDeleteNote, updateNote }) => {
 
     const [isUpdating, setIsUpdating] = useState(false)
 
@@ -17,8 +20,11 @@ const Note = ({ id, text, date, handleDeleteNote, updateNote, cloneNote }) => {
         setIsUpdating(!isUpdating)
     }
 
+    const dispatch = useDispatch();
+
     const handleCloneClick = () => {
-        cloneNote(text)
+        // cloneNote(text)
+        dispatch(cloneNote(text))
     }
     return (
         <div

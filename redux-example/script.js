@@ -52,8 +52,15 @@ withdraw.onclick = function () {
     store.dispatch(actionWithdraw(10))
 }
 
+
 const store = window.store =  createStore(reducer)
 // bien window cho phep truy cap qua console
+
+
+//Listener
+store.subscribe(()=>{
+    render()
+ })
 
 function render () {
     const output = document.querySelector('#output')

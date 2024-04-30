@@ -1,12 +1,33 @@
-import {
-    createStore
-} from 'https://cdn.skypack.dev/redux';
+// import { createStore } from 'https://cdn.skypack.dev/redux';
 
+/////////// MY REDUX ///////////////////
+
+function createStore(reducer) {
+    let state = reducer(undefined, {})
+    console.log(state);
+    const subscribers = []
+
+    return {
+        getState() {
+            return state;
+        },
+
+        dispatch(action) {
+            state = reducer(state, action)
+
+            subscribers.forEach(subscriber => subscriber()) 
+        },
+
+        subscribe(subscriber) {
+            subscribers.push(subscriber)
+        }
+    }
+}
 // Reducer
 
 const initiateState = 0;
 
-function reducer(state = initiateState, action) {
+function bankReducer(state = initiateState, action) {
     switch (action.type) {
         case 'DEPOSIT':
             return state + action.payload
@@ -53,12 +74,13 @@ withdraw.onclick = function () {
 }
 
 
-const store = window.store =  createStore(reducer)
+const store = window.store =  createStore(bankReducer)
 // bien window cho phep truy cap qua console
 
 
 //Listener
 store.subscribe(()=>{
+    console.log("hi");
     render()
  })
 
